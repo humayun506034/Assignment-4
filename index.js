@@ -1,7 +1,10 @@
 
-//first problem
-
 function calculateMoney(ticketSale){
+
+    const ticketPrice=120;
+    const numberOfStaff=8;
+    const  perStaffLunch=50;
+    const guradSelary=500;
     
     if(typeof ticketSale !== 'number'){
         return 'Provide Number value'
@@ -10,16 +13,15 @@ function calculateMoney(ticketSale){
         return "Invalid Number"
     }
     else{
-        return (ticketSale*120 -(500+(8*50)));
+        return (ticketSale*ticketPrice -(guradSelary+(numberOfStaff*perStaffLunch)));
     }
 }
 
-
-
-//second problem
-
 function checkName(name){
 
+    if(typeof name !== 'string'){
+        return 'invalid';
+    }
     const inputName=name.toLowerCase();
     const indicator=['a', 'y', 'i', 'e', 'o', 'u', 'w'];
     const lastCharacter=inputName.charAt(inputName.length-1);
@@ -30,12 +32,6 @@ function checkName(name){
         return "Bad Name"
     }
 }
-
-
-
-
-
-//third problem
 
 function deleteInvalids(array){
     if(Array.isArray(array) !== true){
@@ -50,9 +46,6 @@ function deleteInvalids(array){
     return finalArray;
 }
 
-
-//fourth
-
 function password(obj) {
     if (!obj.name || !obj.birthYear || !obj.siteName) {
         return "invalid"
@@ -66,11 +59,6 @@ function password(obj) {
         return password;
     }
 }
-
-
-
-
-//fifth
 
 function monthlySavings(array, livingCost) {
     if (Array.isArray(array) !== true || typeof livingCost !== 'number') {
@@ -95,5 +83,3 @@ function monthlySavings(array, livingCost) {
         return "earn more";
     }
 }
-const input = monthlySavings([1500,2500], 5000);
-console.log(input);
